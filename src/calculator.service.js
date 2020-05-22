@@ -1,5 +1,7 @@
 function CalculatorService() {
-    function calculate(){}
+    function calculate(){
+        return 5
+    }
 
     return [calculate]
 }

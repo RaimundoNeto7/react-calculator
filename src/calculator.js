@@ -7,6 +7,10 @@ function Calculator() {
 
   const [displayResult, setDisplayResult] = useState('0')
 
+  function addNumber(number) {
+    setDisplayResult(displayResult + number)
+  }
+
   return (
     <Jumbotron style={
       {

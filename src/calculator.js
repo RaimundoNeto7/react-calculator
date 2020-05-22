@@ -38,7 +38,9 @@ function Calculator() {
 
         <Row>
           <Col xs='3'>
-            <Button variant='light'>7</Button>
+            <Button 
+              variant='light'
+              onClick={() => addNumber('7')}>7</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'>8</Button>

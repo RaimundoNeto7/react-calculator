@@ -11,4 +11,10 @@ describe('CalculatorService test', () => {
 
         expect(sum).toEqual(5)
     })
+
+    it('should garanteed with 2 + 10 = 12', () => {
+        const sum = calculate(2, 10, '+')
+        
+        expect(sum).toEqual(12)
+    })
 })

@@ -18,3 +18,13 @@ describe('CalculatorService sum test', () => {
         expect(sum).toEqual(12)
     })
 })
+
+describe('CalculatorService subtraction test', () => {
+    const [calculate] = CalculatorService()
+
+    it('should garanteed with 10 - 4 = 6', () => {
+        const sub = calculate(10, 4, '-')
+
+        expect(sub).toEqual(6)
+    })
+})

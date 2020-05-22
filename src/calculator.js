@@ -4,6 +4,9 @@ import './calculator.css';
 import { Jumbotron, Container, Row, Col, Button, Form } from 'react-bootstrap'
 
 function Calculator() {
+
+  const [displayResult, setDisplayResult] = useState('0')
+
   return (
     <Jumbotron style={
       {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import CalculatorService from './calculator.service'
 
-describe('CalculatorService test', () => {
+describe('CalculatorService sum test', () => {
     const [calculate] = CalculatorService()
 
     it('should garanteed with 1 + 4 = 5', () => {

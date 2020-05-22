@@ -1,6 +1,6 @@
 function CalculatorService() {
-    function calculate(){
-        return 5
+    function calculate(a, b, operation){
+        return a + b
     }
 
     return [calculate]

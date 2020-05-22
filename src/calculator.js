@@ -26,8 +26,9 @@ function Calculator() {
           <Col xs='9'>
             <Form.Control type='text'
             name='display'
-            class='text-right'
-            readOnly='readOnly'/>
+            className='text-right'
+            readOnly='readOnly'
+            value={displayResult}/>
           </Col>
         </Row>
 

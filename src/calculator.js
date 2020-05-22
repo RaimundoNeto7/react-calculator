@@ -43,10 +43,12 @@ function Calculator() {
               onClick={() => addNumber('7')}>7</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>8</Button>
+            <Button variant='light'
+            onClick={() => addNumber('8')}>8</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>9</Button>
+            <Button variant='light'
+            onClick={() => addNumber('9')}>9</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>/</Button>
@@ -55,13 +57,16 @@ function Calculator() {
 
         <Row>
           <Col xs='3'>
-            <Button variant='light'>4</Button>
+            <Button variant='light'
+            onClick={() => addNumber('4')}>4</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>5</Button>
+            <Button variant='light'
+            onClick={() => addNumber('5')}>5</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>6</Button>
+            <Button variant='light'
+            onClick={() => addNumber('6')}>6</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>*</Button>
@@ -70,13 +75,16 @@ function Calculator() {
 
         <Row>
           <Col xs='3'>
-            <Button variant='light'>1</Button>
+            <Button variant='light'
+            onClick={() => addNumber('1')}>1</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>2</Button>
+            <Button variant='light'
+            onClick={() => addNumber('2')}>2</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>3</Button>
+            <Button variant='light'
+            onClick={() => addNumber('3')}>3</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>-</Button>
@@ -88,7 +96,8 @@ function Calculator() {
             <Button variant='light'>.</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='light'>0</Button>
+            <Button variant='light'
+            onClick={() => addNumber('0')}>0</Button>
           </Col>
           <Col xs='3'>
             <Button variant='success'>=</Button>

@@ -16,7 +16,9 @@ function CalculatorService() {
         }
     }
 
-    function validateButton(){}
+    function validateButton(button, currentValue){
+        return currentValue
+    }
 
     return [calculate, validateButton]
 }

@@ -13,14 +13,14 @@ function Calculator() {
   const [operatorB, setOperatorB] = useState(null)
   const [operation, setOperation] = useState(null)
 
-  function addNumber(number) {
+  function clickButton(button) {
     let result;
     if(operation === null){
-      result = validateButton(number, operatorA)
+      result = validateButton(button, operatorA)
       setOperatorA(result)
     }
     else{
-      result = validateButton(number, operatorB)
+      result = validateButton(button, operatorB)
       setOperatorB(result)
     }
     setDisplayResult(result)
@@ -55,15 +55,15 @@ function Calculator() {
           <Col xs='3'>
             <Button 
               variant='light'
-              onClick={() => addNumber('7')}>7</Button>
+              onClick={() => clickButton('7')}>7</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('8')}>8</Button>
+            onClick={() => clickButton('8')}>8</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('9')}>9</Button>
+            onClick={() => clickButton('9')}>9</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>/</Button>
@@ -73,15 +73,15 @@ function Calculator() {
         <Row>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('4')}>4</Button>
+            onClick={() => clickButton('4')}>4</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('5')}>5</Button>
+            onClick={() => clickButton('5')}>5</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('6')}>6</Button>
+            onClick={() => clickButton('6')}>6</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>*</Button>
@@ -91,15 +91,15 @@ function Calculator() {
         <Row>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('1')}>1</Button>
+            onClick={() => clickButton('1')}>1</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('2')}>2</Button>
+            onClick={() => clickButton('2')}>2</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('3')}>3</Button>
+            onClick={() => clickButton('3')}>3</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'>-</Button>
@@ -112,7 +112,7 @@ function Calculator() {
           </Col>
           <Col xs='3'>
             <Button variant='light'
-            onClick={() => addNumber('0')}>0</Button>
+            onClick={() => clickButton('0')}>0</Button>
           </Col>
           <Col xs='3'>
             <Button variant='success'>=</Button>

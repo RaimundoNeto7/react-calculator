@@ -160,5 +160,22 @@ describe('CalculatorService validate click buttons', () => {
 
         const operationDivButton = validateButton(DIV, '12')
         expect(operationDivButton).toEqual('12/')
-    }) 
+    })
+    
+    it('if the operation already has been selected, then ignore the new operation and return the current value', () => {
+        const operationSumButton = validateButton(SUM, '12+')
+        expect(operationSumButton).toEqual('12+')
+
+        const operationSubButton = validateButton(SUB, '12-')
+        expect(operationSubButton).toEqual('12-')
+
+        const operationMultButton = validateButton(MULT, '12*')
+        expect(operationMultButton).toEqual('12*')
+
+        const operationDivButton = validateButton(DIV, '12/')
+        expect(operationDivButton).toEqual('12/')
+
+        const otherOperationButton = validateButton(MULT, '12+')
+        expect(otherOperationButton).toEqual('12+')
+    })
 })

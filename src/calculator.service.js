@@ -38,6 +38,9 @@ function CalculatorService() {
             }
             case MULT :
             case DIV : {
+                if(currentValue.indexOf(SUM) !== -1 || currentValue.indexOf(SUB) !== -1 || currentValue.indexOf(MULT) !== -1 || currentValue.indexOf(DIV) !== -1){
+                    return currentValue
+                }
                 return currentValue + button
             }
             default: {

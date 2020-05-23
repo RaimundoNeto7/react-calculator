@@ -17,10 +17,14 @@ function CalculatorService() {
     }
 
     function validateButton(button, currentValue){
-        if(currentValue.indexOf('.') === -1){
-            return currentValue + '.'
+        switch (button) {
+            case '.' : {
+                if(currentValue.indexOf('.') === -1){
+                    return currentValue + '.'
+                }
+                return currentValue
+            }
         }
-        return currentValue
     }
 
     return [calculate, validateButton]

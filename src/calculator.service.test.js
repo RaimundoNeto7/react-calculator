@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 
 import CalculatorService from './calculator.service'
 
-describe('CalculatorService sum test', () => {
-    const [calculate] = CalculatorService()
+const [calculate, validateButton] = CalculatorService()
 
+describe('CalculatorService sum test', () => {
     it('should garanteed with 1 + 4 = 5', () => {
         const sum = calculate(1, 4, '+')
 
@@ -20,8 +20,6 @@ describe('CalculatorService sum test', () => {
 })
 
 describe('CalculatorService subtraction test', () => {
-    const [calculate] = CalculatorService()
-
     it('should garanteed with 10 - 4 = 6', () => {
         const sub = calculate(10, 4, '-')
 
@@ -36,8 +34,6 @@ describe('CalculatorService subtraction test', () => {
 })
 
 describe('CalculatorService multiplication test', () => {
-    const [calculate] = CalculatorService()
-
     it('should garanteed with 2 * 6 = 12', () => {
         const mult = calculate(2, 6, '*')
 
@@ -58,8 +54,6 @@ describe('CalculatorService multiplication test', () => {
 })
 
 describe('CalculatorService division test', () => {
-    const [calculate] = CalculatorService()
-
     it('should garanteed with 2 / 6 = 12', () => {
         const div = calculate(2, 6, '/')
 
@@ -80,8 +74,6 @@ describe('CalculatorService division test', () => {
 })
 
 describe('CalculatorService validate button test', () => {
-    const [validateButton] = CalculatorService()
-    
     it('should garanteed if has dot(.) then dotButton will return a current value', () => {
         const dotButton = validateButton('.', 0.6)
 

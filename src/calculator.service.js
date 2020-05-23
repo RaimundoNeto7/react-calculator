@@ -1,14 +1,20 @@
 function CalculatorService() {
-    
+
+    const SUM = '+'
+    const SUB = '-'
+    const MULT = '*'
+    const DIV = '/'
+    const DOT = '.'
+
     function calculate(a, b, operation){
         switch (operation) {
-            case '+' :
+            case SUM :
                 return a + b 
-            case '-' :
+            case SUB :
                 return a - b
-            case '*' :
+            case MULT :
                 return a * b
-            case '/' :
+            case DIV :
                 if(b === 0 || b === 0.0){
                     return 'NaN'
                 }
@@ -18,20 +24,20 @@ function CalculatorService() {
 
     function validateButton(button, currentValue){
         switch (button) {
-            case '.' : {
-                if(currentValue.indexOf('.') === -1){
-                    return currentValue + '.'
+            case DOT : {
+                if(currentValue.indexOf(DOT) === -1){
+                    return currentValue + DOT
                 }
                 return currentValue
             }
-            case '+' : 
-            case '-' : {
+            case SUM : 
+            case SUB : {
                 if(currentValue === '0'){
                     return currentValue
                 }
             }
-            case '*' :
-            case '/' : {
+            case MULT :
+            case DIV : {
                 return currentValue + button
             }
             default: {
@@ -43,7 +49,7 @@ function CalculatorService() {
         }
     }
 
-    return [calculate, validateButton]
+    return [calculate, validateButton, SUM, SUB, MULT, DIV, DOT]
 }
 
 export default CalculatorService

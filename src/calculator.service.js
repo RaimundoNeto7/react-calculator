@@ -30,6 +30,10 @@ function CalculatorService() {
                     return currentValue
                 }
             }
+            case '*' :
+            case '/' : {
+                return currentValue + button
+            }
             default: {
                 if(currentValue !== '0'){
                     return currentValue + button

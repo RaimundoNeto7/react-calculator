@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './calculator.css';
 
 import { Jumbotron, Container, Row, Col, Button, Form } from 'react-bootstrap'
+import CalculatorService from './calculator.service'
 
 function Calculator() {
 
+  const [calculate, validateButton, SUM, SUB, MULT, DIV, DOT] = CalculatorService()
   const [displayResult, setDisplayResult] = useState('0')
 
   function addNumber(number) {

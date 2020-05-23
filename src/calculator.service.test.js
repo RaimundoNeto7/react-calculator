@@ -104,5 +104,11 @@ describe('CalculatorService validate dotButton test', () => {
         expect(dotButton).toEqual('0.')
     })
 })
+
 describe('CalculatorService validate numbersButton test', () => {
+    it('if the current value is 0 and any number button is clicked, return the number value', () => {
+        const numberButton = validadeButton('3', '0')
+
+        expect(numberButton).toEqual('3')
+    })  
 })

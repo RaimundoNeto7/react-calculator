@@ -1,4 +1,5 @@
 function CalculatorService() {
+    
     function calculate(a, b, operation){
         switch (operation) {
             case '+' :
@@ -15,7 +16,9 @@ function CalculatorService() {
         }
     }
 
-    return [calculate]
+    function validateButton(){}
+
+    return [calculate, validateButton]
 }
 
 export default CalculatorService

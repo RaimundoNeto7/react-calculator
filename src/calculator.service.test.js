@@ -73,10 +73,28 @@ describe('CalculatorService division test', () => {
     })
 })
 
-describe('CalculatorService validate button test', () => {
-    it('should garanteed if has dot(.) then dotButton will return a current value', () => {
-        const dotButton = validateButton('.', 0.6)
+describe('CalculatorService validate dotButton test', () => {
+    it('should garanteed if no has dot(.), will return current value and dot(.)', () => {
+        const dotButton = validateButton('.', '0')
 
-        expect(dotButton).toEqual(0.6)
+        expect(dotButton).toEqual('0.')
+    })
+
+    it('should garanteed if no has dot(.), will return current value and dot(.)', () => {
+        const dotButton = validateButton('.', '3')
+
+        expect(dotButton).toEqual('3.')
+    })
+    
+    it('should garanteed if has dot(.) then dotButton will return a current value', () => {
+        const dotButton = validateButton('.', '0.6')
+
+        expect(dotButton).toEqual('0.6')
+    })
+
+    it('should garanteed if has dot(.) then dotButton will return a current value', () => {
+        const dotButton = validateButton('.', '320.632')
+
+        expect(dotButton).toEqual('320.632')
     })
 })

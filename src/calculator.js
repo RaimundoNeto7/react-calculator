@@ -16,14 +16,30 @@ function Calculator() {
   function clickButton(button) {
     let result;
     if(operation === null){
-      result = validateButton(button, operatorA)
-      setOperatorA(result)
+      if(button === '+' || button === '-' || button === '*' || button === '/'){
+        setOperation(button)
+        result = validateButton(button, operatorA)
+      }
+      else{
+        result = validateButton(button, operatorA)
+        setOperatorA(result)
+      }
     }
-    else{
+    else {
       result = validateButton(button, operatorB)
       setOperatorB(result)
     }
     setDisplayResult(result)
+  }
+
+  const equalButton = () => {
+    if(operatorB !== null){
+      const result = calculate(parseFloat(operatorA), parseFloat(operatorB), operation)
+      setOperatorA(result.toString())
+      setOperatorB(null)
+      setOperation(null)
+      setDisplayResult(result.toString())
+    }
   }
 
   return (
@@ -119,7 +135,8 @@ function Calculator() {
             onClick={() => clickButton('0')}>0</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='success'>=</Button>
+            <Button variant='success'
+            onClick={() => equalButton()}>=</Button>
           </Col>
           <Col xs='3'>
             <Button variant='warning'

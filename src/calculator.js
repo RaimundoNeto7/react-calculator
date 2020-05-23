@@ -14,7 +14,16 @@ function Calculator() {
   const [operation, setOperation] = useState(null)
 
   function addNumber(number) {
-    setDisplayResult(displayResult + number)
+    let result;
+    if(operation === null){
+      result = validateButton(number, operatorA)
+      setOperatorA(result)
+    }
+    else{
+      result = validateButton(number, operatorB)
+      setOperatorB(result)
+    }
+    setDisplayResult(result)
   }
 
   return (

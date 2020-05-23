@@ -6,7 +6,7 @@ import CalculatorService from './calculator.service'
 
 function Calculator() {
 
-  const [calculate, validateButton, SUM, SUB, MULT, DIV, DOT] = CalculatorService()
+  const [calculate, validateButton, SUM, SUB, MULT, DIV, DOT, SYNTAX_ERROR, NAN_ERROR] = CalculatorService()
   const [displayResult, setDisplayResult] = useState('0')
 
   const [operatorA, setOperatorA] = useState('0')
@@ -14,32 +14,42 @@ function Calculator() {
   const [operation, setOperation] = useState(null)
 
   function clickButton(button) {
-    let result;
-    if(operation === null){
-      if(button === '+' || button === '-' || button === '*' || button === '/'){
-        setOperation(button)
-        result = validateButton(button, operatorA)
+    if(displayResult !== SYNTAX_ERROR && displayResult !== NAN_ERROR){ 
+      let result;
+      if(operation === null){
+        if(button === '+' || button === '-' || button === '*' || button === '/'){
+          setOperation(button)
+          result = validateButton(button, operatorA)
+        }
+        else{
+          result = validateButton(button, operatorA)
+          setOperatorA(result)
+        }
       }
-      else{
-        result = validateButton(button, operatorA)
-        setOperatorA(result)
+      else {
+        result = validateButton(button, operatorB)
+        setOperatorB(result)
       }
+      setDisplayResult(result)
     }
-    else {
-      result = validateButton(button, operatorB)
-      setOperatorB(result)
-    }
-    setDisplayResult(result)
   }
 
   const equalButton = () => {
-    if(operatorB !== null){
+    if(operatorB !== null && displayResult !== SYNTAX_ERROR && displayResult !== NAN_ERROR){
       const result = calculate(parseFloat(operatorA), parseFloat(operatorB), operation)
       setOperatorA(result.toString())
       setOperatorB(null)
       setOperation(null)
       setDisplayResult(result.toString())
     }
+  }
+
+  const cleannerButton = () => {
+    const result = '0'
+    setOperatorA(result)
+    setOperatorB(null)
+    setOperation(null)
+    setDisplayResult(result)
   }
 
   return (
@@ -55,7 +65,8 @@ function Calculator() {
       <Container>
         <Row>
           <Col xs='3'>
-            <Button variant='danger'>C</Button>
+            <Button variant='danger'
+            onClick={() => cleannerButton()}>C</Button>
           </Col>
 
           <Col xs='9'>

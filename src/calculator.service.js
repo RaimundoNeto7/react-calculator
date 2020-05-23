@@ -24,6 +24,9 @@ function CalculatorService() {
                 }
                 return currentValue
             }
+            default: {
+                return button
+            }
         }
     }
 

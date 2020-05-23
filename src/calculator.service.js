@@ -44,7 +44,7 @@ function CalculatorService() {
                 return currentValue + button
             }
             default: {
-                if(currentValue !== '0'){
+                if(currentValue !== '0' && currentValue !== null){
                     return currentValue + button
                 }
                 return button

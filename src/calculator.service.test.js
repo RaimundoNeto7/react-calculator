@@ -27,4 +27,10 @@ describe('CalculatorService subtraction test', () => {
 
         expect(sub).toEqual(6)
     })
+
+    it('should garanteed with 4 - 10 = -6', () => {
+        const sub = calculate(4, 10, '-')
+
+        expect(sub).toEqual(-6)
+    })
 })

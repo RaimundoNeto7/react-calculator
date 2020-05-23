@@ -104,3 +104,5 @@ describe('CalculatorService validate dotButton test', () => {
         expect(dotButton).toEqual('0.')
     })
 })
+describe('CalculatorService validate numbersButton test', () => {
+})

@@ -24,6 +24,11 @@ function CalculatorService() {
                 }
                 return currentValue
             }
+            case '+' : {
+                if(currentValue === '0'){
+                    return currentValue
+                }
+            }
             default: {
                 if(currentValue !== '0'){
                     return currentValue + button

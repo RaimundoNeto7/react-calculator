@@ -66,7 +66,8 @@ function Calculator() {
             onClick={() => clickButton('9')}>9</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='warning'>/</Button>
+            <Button variant='warning'
+            onClick={() => clickButton(DIV)}>/</Button>
           </Col>
         </Row>
 
@@ -84,7 +85,8 @@ function Calculator() {
             onClick={() => clickButton('6')}>6</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='warning'>*</Button>
+            <Button variant='warning'
+            onClick={() => clickButton(MULT)}>*</Button>
           </Col>
         </Row>
 
@@ -102,13 +104,15 @@ function Calculator() {
             onClick={() => clickButton('3')}>3</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='warning'>-</Button>
+            <Button variant='warning'
+            onClick={() => clickButton(SUB)}>-</Button>
           </Col>
         </Row>
 
         <Row>
           <Col xs='3'>
-            <Button variant='light'>.</Button>
+            <Button variant='light'
+            onClick={() => clickButton('.')}>.</Button>
           </Col>
           <Col xs='3'>
             <Button variant='light'
@@ -118,7 +122,8 @@ function Calculator() {
             <Button variant='success'>=</Button>
           </Col>
           <Col xs='3'>
-            <Button variant='warning'>+</Button>
+            <Button variant='warning'
+            onClick={() => clickButton(SUM)}>+</Button>
           </Col>
         </Row>
       </Container>

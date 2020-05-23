@@ -9,6 +9,10 @@ function Calculator() {
   const [calculate, validateButton, SUM, SUB, MULT, DIV, DOT] = CalculatorService()
   const [displayResult, setDisplayResult] = useState('0')
 
+  const [operatorA, setOperatorA] = useState('0')
+  const [operatorB, setOperatorB] = useState(null)
+  const [operation, setOperation] = useState(null)
+
   function addNumber(number) {
     setDisplayResult(displayResult + number)
   }

@@ -132,5 +132,9 @@ describe('CalculatorService validate number buttons test', () => {
 })
 
 describe('CalculatorService validate operation buttons', () => {
+    it('if the current value is "0" and sumButton has clicked, return "0', () => {
+        const sumButton = validateButton('+', '0')
 
+        expect(sumButton).toEqual('0')
+    })
 })

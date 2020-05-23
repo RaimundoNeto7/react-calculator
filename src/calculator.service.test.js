@@ -34,3 +34,25 @@ describe('CalculatorService subtraction test', () => {
         expect(sub).toEqual(-6)
     })
 })
+
+describe('CalculatorService multiplication test', () => {
+    const [calculate] = CalculatorService()
+
+    it('should garanteed with 2 * 6 = 12', () => {
+        const mult = calculate(2, 6, '*')
+
+        expect(mult).toEqual(12)
+    })
+
+    it('should garanteed with 6 * 2 = 12', () => {
+        const mult = calculate(6, 2, '*')
+
+        expect(mult).toEqual(12)
+    })
+
+    it('should garanteed with 2 * 0 = 0', () => {
+        const mult = calculate(2, 0, '*')
+
+        expect(mult).toEqual(0)
+    })
+})

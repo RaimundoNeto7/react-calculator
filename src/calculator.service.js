@@ -25,6 +25,9 @@ function CalculatorService() {
                 return currentValue
             }
             default: {
+                if(currentValue !== '0'){
+                    return currentValue + button
+                }
                 return button
             }
         }

@@ -106,15 +106,27 @@ describe('CalculatorService validate dotButton test', () => {
 })
 
 describe('CalculatorService validate numbersButton test', () => {
-    it('if the current value is 0 and any number button is clicked, return the number value', () => {
+    it('if the current value is "0" and any number button is clicked, return the number value', () => {
         const numberButton = validateButton('3', '0')
 
         expect(numberButton).toEqual('3')
     })
 
-    it('if the current value is not 0 and any number button is clicked, return the current value concat number value', () => {
+    it('if the current value is not "0" and any number button is clicked, return the current value concat number value', () => {
         const numberButton = validateButton('3', '3')
 
         expect(numberButton).toEqual('33')
+    })
+
+    it('if the current value is not "0" and any number button is clicked, return the current value concat number value', () => {
+        const numberButton = validateButton('3', '3.')
+
+        expect(numberButton).toEqual('3.3')
+    })
+
+    it('if the current value is not "0" and any number button is clicked, return the current value concat number value', () => {
+        const numberButton = validateButton('3', '0.')
+
+        expect(numberButton).toEqual('0.3')
     })
 })

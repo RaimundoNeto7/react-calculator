@@ -132,7 +132,7 @@ describe('CalculatorService validate number buttons test', () => {
 })
 
 describe('CalculatorService validate operation buttons', () => {
-    it('if the current value is "0" and any operation button has clicked, return "0', () => {
+    it('if the current value is "0" and sum or sub operation button has clicked, return "0"', () => {
         const sumButton = validateButton('+', '0')
         expect(sumButton).toEqual('0')
 
@@ -140,7 +140,7 @@ describe('CalculatorService validate operation buttons', () => {
         expect(subButton).toEqual('0')
     })
 
-    it('if the operation has not yet been selected, return the current value concatenated with the operation', () => {
+    it('if the operation has not yet been selected and current value is different "0", return the current value concatenated with the operation', () => {
         const operationSumButton = validateButton('+', '12')
         expect(operationSumButton).toEqual('12+')
 

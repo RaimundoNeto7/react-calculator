@@ -6,6 +6,9 @@ function CalculatorService() {
     const DIV = '/'
     const DOT = '.'
 
+    const SYNTAX_ERROR = 'Syntax error'
+    const NAN_ERROR = 'NaN'
+
     function calculate(a, b, operation){
         switch (operation) {
             case SUM :
@@ -16,7 +19,7 @@ function CalculatorService() {
                 return a * b
             case DIV :
                 if(b === 0 || b === 0.0){
-                    return 'NaN'
+                    return NAN_ERROR
                 }
                 return a / b
         }
@@ -38,6 +41,9 @@ function CalculatorService() {
             }
             case MULT :
             case DIV : {
+                if(currentValue === null){
+                    return SYNTAX_ERROR
+                }
                 if(currentValue.indexOf(SUM) !== -1 || currentValue.indexOf(SUB) !== -1 || currentValue.indexOf(MULT) !== -1 || currentValue.indexOf(DIV) !== -1){
                     return currentValue
                 }
@@ -52,7 +58,7 @@ function CalculatorService() {
         }
     }
 
-    return [calculate, validateButton, SUM, SUB, MULT, DIV, DOT]
+    return [calculate, validateButton, SUM, SUB, MULT, DIV, DOT, SYNTAX_ERROR, NAN_ERROR]
 }
 
 export default CalculatorService

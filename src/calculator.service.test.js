@@ -56,3 +56,25 @@ describe('CalculatorService multiplication test', () => {
         expect(mult).toEqual(0)
     })
 })
+
+describe('CalculatorService division test', () => {
+    const [calculate] = CalculatorService()
+
+    it('should garanteed with 2 / 6 = 12', () => {
+        const div = calculate(2, 6, '/')
+
+        expect(div).toEqual(1/3)
+    })
+
+    it('should garanteed with 0 / 1 = 0', () => {
+        const div = calculate(0, 1, '/')
+
+        expect(div).toEqual(0)
+    })
+
+    it('should garanteed with 1 / 0 is a NaN', () => {
+        const div = calculate(1, 0, '/')
+
+        expect(div).toEqual('NaN')
+    })
+})

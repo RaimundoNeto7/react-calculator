@@ -7,8 +7,12 @@ function CalculatorService() {
                 return a - b
             case '*' :
                 return a * b
+            case '/' :
+                if(b === 0 || b === 0.0){
+                    return 'NaN'
+                }
+                return a / b
         }
-        return a + b
     }
 
     return [calculate]

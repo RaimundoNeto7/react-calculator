@@ -24,7 +24,8 @@ function CalculatorService() {
                 }
                 return currentValue
             }
-            case '+' : {
+            case '+' : 
+            case '-' : {
                 if(currentValue === '0'){
                     return currentValue
                 }

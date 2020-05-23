@@ -97,4 +97,10 @@ describe('CalculatorService validate dotButton test', () => {
 
         expect(dotButton).toEqual('320.632')
     })
+
+    it('should garanteed if has dot(.) then dotButton will return a current value', () => {
+        const dotButton = validateButton('.', '0.')
+
+        expect(dotButton).toEqual('0.')
+    })
 })

@@ -78,3 +78,13 @@ describe('CalculatorService division test', () => {
         expect(div).toEqual('NaN')
     })
 })
+
+describe('CalculatorService validate button test', () => {
+    const [validateButton] = CalculatorService()
+    
+    it('should garanteed if has dot(.) then dotButton will return a current value', () => {
+        const dotButton = validateButton('.', 0.6)
+
+        expect(dotButton).toEqual(0.6)
+    })
+})
